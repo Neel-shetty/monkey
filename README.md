@@ -86,24 +86,13 @@ if (x > y) {
 }
 ```
 
-**Loops:**
-```monkey
-let i = 0;
-while (i < 10) {
-    puts(i);
-    i = i + 1;
-}
-```
-
 ### Functions
 
 ```monkey
-// Simple function
 let greet = fn(name) {
     return "Hello " + name + "!";
 };
 
-// Higher-order function
 let applyTwice = fn(f, x) {
     return f(f(x));
 };
