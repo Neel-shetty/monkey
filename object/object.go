@@ -3,6 +3,7 @@ package object
 import (
 	"bytes"
 	"fmt"
+	"strings"
 
 	"github.com/Neel-shetty/monkey/ast"
 )
@@ -86,7 +87,7 @@ type Function struct {
 func (f *Function) Type() ObjectType {
 	return FUNCTION_OBJ
 }
-func (f *Function) String() {
+func (f *Function) Inspect() string {
 	var out bytes.Buffer
 
 	params := []string{}
