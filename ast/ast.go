@@ -177,7 +177,7 @@ type Boolean struct {
 
 func (b *Boolean) ExpressionNode()      {}
 func (b *Boolean) TokenLiteral() string { return b.Token.Literal }
-func (b *Boolean) String() string { return b.Token.Literal }
+func (b *Boolean) String() string       { return b.Token.Literal }
 
 type IfExpression struct {
 	Token       token.Token // the 'if' token
@@ -185,6 +185,7 @@ type IfExpression struct {
 	Consequence *BlockStatement
 	Alternative *BlockStatement
 }
+
 func (ie *IfExpression) ExpressionNode()      {}
 func (ie *IfExpression) TokenLiteral() string { return ie.Token.Literal }
 func (ie *IfExpression) String() string {
@@ -208,7 +209,8 @@ type BlockStatement struct {
 	Token      token.Token // the { token
 	Statements []Statement
 }
-func (bs *BlockStatement) StatementNode() {}
+
+func (bs *BlockStatement) StatementNode()       {}
 func (bs *BlockStatement) TokenLiteral() string { return bs.Token.Literal }
 func (bs *BlockStatement) String() string {
 	var out bytes.Buffer
@@ -268,3 +270,12 @@ func (ce *CallExpression) String() string {
 
 	return out.String()
 }
+
+type StringLiteral struct {
+	Token token.Token
+	Value string
+}
+
+func (sl *StringLiteral) ExpressionNode()      {}
+func (sl *StringLiteral) TokenLiteral() string { return sl.Token.Literal }
+func (sl *StringLiteral) String() string       { return sl.Token.Literal }

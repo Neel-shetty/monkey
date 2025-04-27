@@ -16,13 +16,13 @@ const (
 	INT   = "INT"   // 1234567890
 
 	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
 	MINUS    = "-"
 	BANG     = "!"
 	ASTERISK = "*"
 	SLASH    = "/"
-	
+
 	// Delimiters
 	COMMA     = ","
 	SEMICOLON = ";"
@@ -34,23 +34,24 @@ const (
 
 	// Keywords
 	FUNCTION = "FUNCTION"
+	STRING   = "STRING"
 	LET      = "LET"
 	TRUE     = "TRUE"
 	FALSE    = "FALSE"
 	IF       = "IF"
 	ELSE     = "ELSE"
 	RETURN   = "RETURN"
-	
+
 	// Comparison Operators
-	LT = "<"
-	GT = ">"
-	EQ       = "=="
-	NOT_EQ   = "!="
+	LT     = "<"
+	GT     = ">"
+	EQ     = "=="
+	NOT_EQ = "!="
 )
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
 	"true":   TRUE,
 	"false":  FALSE,
 	"if":     IF,
